@@ -2,15 +2,17 @@
 
 This is the template for your project 2 submission. For a full description of the Project, please refer to [this document](https://docs.google.com/document/d/1jmFpRdEZJ_Cmk9Hp1q_I7Co9vRo-d5a3fUHcKBYSAPk/edit?usp=sharing).
 
-# Personal information to add
+## Personal information to add
 
 * **Name**:
 * **Student ID**:
 * **email**:
 
-## Important notice
+## Important notice before submitting
 
 Make sure to create a branch with your studentID number before
+
+---
 
 ## Table of content
 
