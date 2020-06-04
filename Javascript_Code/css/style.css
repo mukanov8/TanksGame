@@ -1,0 +1,135 @@
+html, body {
+  margin: 0;
+  align-items: center;
+  text-align: center;
+}
+canvas {
+  display: block;
+}
+
+
+.week
+{
+  margin-bottom: 5%;
+}
+
+.week h2
+{
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+  color: brown;
+}
+
+
+
+.sketchContainer
+{
+  display: inline-block;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.sketchContainer p
+{
+  clear:both;
+  float:left;
+  font-size: large;
+  font-family: 'Courier New', Courier, monospace;
+  color: brown;
+  margin-left: 1%;
+}
+
+.sketchContainer buttons
+{
+  float:left;
+  clear: left;
+}
+
+.sketchContainer button
+{
+  float:left;
+  margin-right: 5px;
+  margin-top: 1px;
+}
+
+
+.sketch
+{
+  clear:both;
+  float:left;
+  width: 400px;
+  height: 300px;  
+}
+ 
+.mdl-dialog {
+
+  border: none;
+  box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
+  min-width: 500px;
+  height: 600px; }
+  .mdl-dialog__title {
+    padding: 24px 24px 0;
+    margin: 0;
+    font-size: 2.5rem; }
+  .mdl-dialog__actions {
+    padding: 8px 8px 8px 24px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    display: inline-block;
+    -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+    .mdl-dialog__actions > * {
+      margin-right: 8px;
+      height: 36px; }
+      .mdl-dialog__actions > *:first-child {
+        margin-right: 0; }
+    .mdl-dialog__actions--full-width {
+      padding: 0 0 8px 0; }
+      .mdl-dialog__actions--full-width > * {
+        height: 48px;
+        -webkit-flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        padding-right: 16px;
+        margin-right: 0;
+        text-align: right; }
+  .mdl-dialog__content {
+    padding: 20px 24px 24px 24px;
+    color: rgba(0,0,0, 0.54); }
+
+
+  .mdl-dialog__content iframe
+  {
+    width: 490px;
+    height: 450px;
+  }
+
+
+.index{
+  float:left;
+  width: 100%;
+}
+
+.index h2
+{
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+  color: brown;
+  margin-left: 2%;
+}
+
+.index li{
+  font-size: large;
+  float:left;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.index a
+{
+  color: brown;
+}
