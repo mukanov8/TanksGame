@@ -1,0 +1,10 @@
+// {type:class}
+// {direction:topDown}
+// {generate:true}
+[startingPage]->[tanksPage]
+[startingPage]->[mapPage]
+
+[mapPage]->[startingPage]
+[tanksPage]->[startingPage]
+
+
