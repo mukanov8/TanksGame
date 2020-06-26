@@ -598,16 +598,8 @@ public float getDamage(FBody bullet){
 
 //for playing crash sound when tank collides with environment or other tank
 public void contactStarted(FContact c) {	
-	//when any tank collides with other bricks & map borders
-	if( ((c.getBody1()).getGroupIndex() >0) && ((c.getBody2()).isStatic()) ){
-		// crashSound.play();		
-	}
-	//I decided to not play the sound since it becomes too loud when players start hitting the bricks
-	else if ( ((c.getBody2()).getGroupIndex() >0) && ((c.getBody1()).isStatic()) ){
-		// crashSound.play();
-	}
-	//when two tanks collide
-	else if ( ((c.getBody1()).getGroupIndex() ==1) && ((c.getBody2()).getGroupIndex() ==2) ){
+	//when two tanks collide the crash sound will play
+	if ( ((c.getBody1()).getGroupIndex() ==1) && ((c.getBody2()).getGroupIndex() ==2) ){
 		crashSound.play();
 	}	
 }
@@ -669,8 +661,10 @@ public boolean collided(FContactResult c, FBody one, FBody two){
 			world.remove(one);
 			bricks.remove(one);
 		}
+		return true;
 	}
 	return false;
+	
 }
 
 public void reset(){
