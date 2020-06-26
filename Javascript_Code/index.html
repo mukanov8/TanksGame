@@ -1,23 +1,119 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <script src="js/p5.js"></script>
-  <script src="js/p5.dom.min.js"></script>
-  <script src="js/p5.sound.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<style>
+    .loader {
+    margin: 0 auto;
+    margin-top: 10%;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid rgb(44,104,154);
+    border-right: 16px solid rgb(61,149,228);
+    border-bottom: 16px solid rgb(185,44,34);
+    border-left: 16px solid rgb(236,66,56);
+    width: 320px;
+    height: 320px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    }
+    @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+    }
 
-  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
-  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
 
-  <script src="sketch.js"></script>
+    h1{
+        margin: 0 auto;
+        color: rgb(255, 41, 41);
+        text-shadow: 2px 0px rgb(200, 19, 19);
+        /* margin-left: 40%; */
+        font-size: 40px;
+        width: 330px;
+        margin-top: 20px;
+    }
+    h2{
+        margin: 0 auto;
+        /* margin-left: 39%; */
+        margin-top: 30px;
+        font-size: 20px;
+        width: 345px;
+    }
+    h3{
+        margin: 0 auto;
+        margin-top: -19%;
+        width: 200px;
+        height: 200px;
+        color: black;
+        /* color: rgb(251, 5, 5); */
+        text-align: center;
+        line-height: 200px;
+        animation: spin 2s linear infinite;
+    }
+    button{
+        width: 100px;
+        margin-top: 15%;
+        border-radius: 4px;
+        padding: 3px;
+    }
+    #instrBtn{
+        /* color: red; */
+        margin-left: 42%;
+        /* margin: 0 auto; */
+    }
+    #instrBtn:hover{ 
+        border-radius: 4px;
+        background-color: rgb(236,66,56);
+    }  
+    #srcBtn{
+        margin-left: 10px;
+    }
+    #srcBtn:hover{ 
+        border-radius: 4px;
+        background-color: rgb(61,149,228);
+    }  
+</style>
+<script>
+    $(function () {
+        ws = new WebSocket("ws://localhost:8025/test");
+        ws.onopen = function () {
+        // Web Socket is connected, send data using send()
+        console.log("Ready...");
+        };
+        ws.onmessage = function (evt) {
+            var received_msg = evt.data;
+            retJson = JSON.parse(received_msg);
+            if(retJson.message === "map"){
+                console.log("Going to Map creation page");
+                window.location.href = "map.html";
+            }
+            else if(retJson.message === "tanks"){
+                console.log("Going to Tanks selection page");
+                window.location.href = "tanks.html";
+            }
+        };
+        ws.onclose = function () {
+        // websocket is closed.
+        console.log("Connection is closed...");
+        };
+    });
 
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <meta charset="utf-8">
+</script>
 </head>
 
 <body>
-
+    <title>Project2_Ayan_StartingPage</title>
+    <h1>TanksGame Editor</h1>
+    <h2> launch your Java tanks game to proceed</h2>
+    <div class="loader"> </div>
+    <h3>waiting</h3>
+    <button type="button" id = "instrBtn" onclick= "window.open('https://github.com/mukanov8/TanksGame/blob/master/README.md');" value="Go to Instructions">Manual</button>
+    <button type="button" id = "srcBtn" onclick= "window.open('https://github.com/mukanov8/TanksGame');" value="Go to Repo">Source</button>
 </body>
-
 </html>
