@@ -277,7 +277,6 @@ void mouseClicked() {
 	if (menuSetting==1&& (mouseX > 150 + centerX && mouseX < 400 + centerX) && (mouseY > 150 + centerY && mouseY < 200 + centerY)){
 		clickSound.play();
 		menuSetting = 3;
-		// link("http://prepros.localhost:8848/");
 	}
 	// if (menuSetting==2&& (mouseX > 150 + centerX && mouseX < 400 + centerX) && (mouseY > 150 + centerY && mouseY < 200 + centerY)){
 	// 	clickSound.play();
@@ -469,19 +468,20 @@ void createBrick(float x, float y, int size, int b){
 	world.add(brk);
 	bricks.add(brk);
 }
-void deleteBrick(float x, float y){
-	FBody del = (FBody)world.getBody(x,y); 
-	bricks.remove((FBox)del);
-	world.remove(del);
-	brick_cnt-=1;
-}
-void saveMap(ArrayList<FBox> bricks, ArrayList<FBox> map ){
-	if (bricks.size()>0){
-		for(FBox brick:bricks){
-			map.add(brick);
-		}
-	}
-}
+
+// void deleteBrick(float x, float y){
+// 	FBody del = (FBody)world.getBody(x,y); 
+// 	bricks.remove((FBox)del);
+// 	world.remove(del);
+// 	brick_cnt-=1;
+// }
+// void saveMap(ArrayList<FBox> bricks, ArrayList<FBox> map ){
+// 	if (bricks.size()>0){
+// 		for(FBox brick:bricks){
+// 			map.add(brick);
+// 		}
+// 	}
+// }
 void loadMap(ArrayList<FBox> map){
 	if (map.size()>0){
 		for(FBox brick:map){
@@ -490,6 +490,7 @@ void loadMap(ArrayList<FBox> map){
 		}
 	}
 }
+
 //for creating brick(FBox object) and adding it to the correct map
 void loadBrick(ArrayList<FBox> br, float x, float y,int size, int b){
 	brickSize = size;
@@ -536,21 +537,21 @@ void loadMapfromJSON(String filename, ArrayList<FBox> map ){
 }
 
 //not used currently
-void saveMaptoJSON(String filename, ArrayList<FBox> map){
-	JSONObject json = new JSONObject();
-	JSONArray pts = new JSONArray();
-	json.setJSONArray("bricks", pts);
-	int i=0;
-	for (FBody b:bricks){
-		JSONObject point = new JSONObject();
-		point.setFloat("x", b.getX());
-		point.setFloat("y", b.getY());
-		pts.setJSONObject(i,point);
-		i++;
-	}
-	saveJSONObject(json, filename);
-	saveMap(bricks, map); 	
-}
+// void saveMaptoJSON(String filename, ArrayList<FBox> map){
+// 	JSONObject json = new JSONObject();
+// 	JSONArray pts = new JSONArray();
+// 	json.setJSONArray("bricks", pts);
+// 	int i=0;
+// 	for (FBody b:bricks){
+// 		JSONObject point = new JSONObject();
+// 		point.setFloat("x", b.getX());
+// 		point.setFloat("y", b.getY());
+// 		pts.setJSONObject(i,point);
+// 		i++;
+// 	}
+// 	saveJSONObject(json, filename);
+// 	saveMap(bricks, map); 	
+// }
 
 void createTank(float x, float y){
 	ArrayList<FBody> overlap = new ArrayList<FBody>();	//to roughly check that there aren't any bodies where we want to add a tank
@@ -669,6 +670,21 @@ void reset(){
 		for (FBox tank:tanks){
 			world.remove(tank);}
 		tanks.clear();
+	}
+	if (map1.size()>0){
+		for (FBox brick:map1){
+			world.remove(brick);}
+		map1.clear();
+	}
+	if (map2.size()>0){
+		for (FBox brick:map2){
+			world.remove(brick);}
+		map2.clear();
+	}
+	if (map3.size()>0){
+		for (FBox brick:map3){
+			world.remove(brick);}
+		map3.clear();
 	}
 	for (int i =0;i<4;i++){
 		keys1[i] = false;
