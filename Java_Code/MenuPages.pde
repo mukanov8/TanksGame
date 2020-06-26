@@ -1,5 +1,6 @@
 //class for displaying all pages (containing buttons and text) on the screen.
 public class MenuPages{
+	
 
 	//is used in the beginning, i.e. starting page
 	void start(){
@@ -34,15 +35,24 @@ public class MenuPages{
 		}
 	}
 
+	// void intro(){
+	// 	println("introoo");
+	// 	translate(centerX, centerY);//Shift things to center
+	// 	fill(#C81313);
+	// 	textSize(80);
+	// 	text("Instructions", 3, -150);
+	// 	// imageMode(CORNERS); image(intro, 0, 0, width, height); 
+	// }
+
 	//page where you choose the map
 	void maps(){	
 		translate(centerX, centerY);//Shift things to center
 		fill(#C81313);
-		textSize(80);
-		text("Choose a map", 3, -150);
+		textSize(60);
+		text("Choose a map", 63, -150);
 		fill(#FF292A);
-		textSize(80);
-		text("Choose a map", 0, -153);
+		textSize(60);
+		text("Choose a map", 60, -153);
 		noStroke();
 		fill(#CCC1AB);
 		rect(-125,0, 200, 200,16);
@@ -50,14 +60,15 @@ public class MenuPages{
 		fill(#C81313);
 		text("Map#1", -75, 100);
 		if ((mouseX > centerX-125 && mouseX < 75 + centerX) && (mouseY > centerY && mouseY < 200 + centerY)){
-			fill(#FFF1D6);
-			rect(-125,0, 200, 200,16);
-			fill(#FF292A);
-			text("Map#1", -75, 100);
+			imageMode(CORNER); image(mapShot1, -125, 0, 200, 200); 
+			// fill(#FFF1D6);
+			// rect(-125,0, 200, 200,16);
+			// fill(#FF292A);
+			// text("Map#1", -75, 100);
+			// textSize(15);
+			// fill(#CCC1AB);
+			// text("map#1", -55, 180);
 
-			textSize(15);
-				fill(#CCC1AB);
-				text("map#1", -55, 180);
 			// if(map1.size()>0){
 			// 	textSize(15);
 			// 	fill(#CCC1AB);
@@ -68,6 +79,7 @@ public class MenuPages{
 			// 	text("no data", -55, 180);
 			// }
 		}
+
 		noStroke();
 		fill(#CCC1AB);
 		rect(175, 0, 200, 200,16);
@@ -75,14 +87,16 @@ public class MenuPages{
 		fill(#C81313);
 		text("Map#2", 225, 100);
 		if ((mouseX > centerX+175 && mouseX < 375 + centerX) && (mouseY > centerY && mouseY < 200 + centerY)){
-			fill(#FFF1D6);
-			rect(175, 0, 200, 200,16);
-			fill(#FF292A);
-			text("Map#2", 225, 100);
-			
-			textSize(15);
-				fill(#CCC1AB);
-				text("map#2", 250, 180);
+			imageMode(CORNER); image(mapShot2, 175, 0, 200, 200); 
+
+			// 	fill(#FFF1D6);
+			// 	rect(175, 0, 200, 200,16);
+			// fill(#FF292A);
+			// text("Map#2", 225, 100);
+			// textSize(15);
+			// fill(#CCC1AB);
+			// text("map#2", 250, 180);
+
 			// if(map2.size()>0){
 			// 	textSize(15);
 			// 	fill(#CCC1AB);
@@ -93,6 +107,7 @@ public class MenuPages{
 			// 	text("no data", 245, 180);
 			// }
 		}
+
 		noStroke();
 		fill(#CCC1AB);
 		rect(475, 0, 200, 200,16);
@@ -104,60 +119,100 @@ public class MenuPages{
 			rect(475, 0, 200, 200,16);
 			fill(#FF292A);
 			text("Map#3", 525, 100);
-			if(map3.size()>0){
-				textSize(15);
-				fill(#CCC1AB);
-				text("last saved map", 525, 180);
-			}else{
-				textSize(15);
-				fill(#CCC1AB);
-				text("no data", 545, 180);
-			}
+
+			textSize(15);
+			fill(#CCC1AB);
+			text("last saved map", 525, 180);
+			// if(map3.size()>0){
+			// 	textSize(15);
+			// 	fill(#CCC1AB);
+			// 	text("last saved map", 525, 180);
+			// }
+			//else{
+			// 	textSize(15);
+			// 	fill(#CCC1AB);
+			// 	text("no data", 545, 180);
+			// }
 		}
+
 		noStroke();
 		fill(#CCC1AB);
-		rect(150, 300, 250, 60,8);
+		rect(150, 260, 250, 60,8);
 		textSize(30);
 		fill(#C81313);
-		text("Create map", 190, 340);
-		if ((mouseX > centerX+150 && mouseX < 400 + centerX) && (mouseY > centerY+300 && mouseY < 360 + centerY)){
+		text("create map", 190, 300);
+		if ((mouseX > centerX+150 && mouseX < 400 + centerX) && (mouseY > centerY+260 && mouseY < 320 + centerY)){
 			fill(#FFF1D6);
-			rect(150, 300, 250, 60,8);
+			rect(150, 260, 250, 60,8);
 			fill(#FF292A);
-			text("Create map", 190, 340);
+			text("create map", 190, 300);
 		}
+
+		noStroke();
+		fill(#CCC1AB);
+		rect(150, 360, 250, 60,8);
+		textSize(30);
+		fill(#C81313);
+		text("choose tanks", 176, 400);
+		if ((mouseX > centerX+150 && mouseX < 400 + centerX) && (mouseY > centerY+360 && mouseY < 420 + centerY)){
+			fill(#FFF1D6);
+			rect(150, 360, 250, 60,8);
+			fill(#FF292A);
+			text("choose tanks", 176, 400);
+		}
+	}
+
+	void loadingMap(){
+		translate(centerX, centerY);//Shift things to center
+		fill(#C81313);
+		textSize(40);
+		text("loading the map...", 93, 0);
+		fill(#FF292A);
+		textSize(40);
+		text("loading the map...", 90, 0);
 	}
 
 	//page where you create your own map, which is then saved
 	//under the slot of 'map3'
-	void mapcustom(){
-		// translate(centerX, centerY);//Shift things to center
-		fill(#C81313);
-		textSize(20);
-		text("Click to add brick", centerX+183, 300);
+	// void mapcustom(){
+	// 	// translate(centerX, centerY);//Shift things to center
+	// 	fill(#C81313);
+	// 	textSize(20);
+	// 	text("Click to add brick", centerX+183, 300);
 
-		fill(#C81313);
-		textSize(18);
-		text("Right-click to remove brick", centerX+143, 540);
-		fill(#C81313);
-		textSize(18);
-		text("Drag to move brick", centerX+173, 580);
+	// 	fill(#C81313);
+	// 	textSize(18);
+	// 	text("Right-click to remove brick", centerX+143, 540);
+	// 	fill(#C81313);
+	// 	textSize(18);
+	// 	text("Drag to move brick", centerX+173, 580);
 
-		noStroke();
-		fill(#CCC1AB);
-		rect(550, 400, 50, 30,4);
-		textSize(18);
+	// 	noStroke();
+	// 	fill(#CCC1AB);
+	// 	rect(550, 400, 50, 30,4);
+	// 	textSize(18);
+	// 	fill(#C81313);
+	// 	text("done", 553, 420);
+	// 	if ((mouseX > 550 && mouseX < 600) && (mouseY > 400 && mouseY < 430)){
+	// 		fill(#FFF1D6);
+	// 		rect(550, 400, 50, 30,4);
+	// 		fill(#FF292A);
+	// 		text("done", 553, 420);
+	// 	}
+	// }
+
+	void loadingTanks(){
+		translate(centerX, centerY);//Shift things to center
 		fill(#C81313);
-		text("done", 553, 420);
-		if ((mouseX > 550 && mouseX < 600) && (mouseY > 400 && mouseY < 430)){
-			fill(#FFF1D6);
-			rect(550, 400, 50, 30,4);
-			fill(#FF292A);
-			text("done", 553, 420);
-		}
+		textSize(40);
+		text("loading the tanks...", 93, 0);
+		fill(#FF292A);
+		textSize(40);
+		text("loading the tanks...", 90, 0);
 	}
 
-	//page where you add a tank/player on screen. Only 2 tanks.
+
+	// page where you add a tank/player on screen. Only 2 tanks.
 	void tankput(){
 		fill(#C81313);
 		textSize(20);
@@ -180,7 +235,9 @@ public class MenuPages{
 	void gameplay(){
 		// displays the health bars of player#1
 		int padding = 20;
-		int len = 100;
+		int len;
+		len = player1.health;
+		
 		noStroke();
 		fill(#CCC1AB);
 		rect(padding,padding,len,20);
@@ -189,10 +246,11 @@ public class MenuPages{
 		text("player1", padding+24, 55);
 
 		if(health1>=0){
-		noStroke();
-		fill(#C81313);
-		rect(padding+3,padding+3,health1 -6,20-6);}
-
+			noStroke();
+			fill(#C81313);
+			rect(padding+3,padding+3,health1 -6,20-6);
+			// else if(player1.health ==50)
+		}
 		//score for player#1
 		textSize(12);
 		fill(#C81313);
@@ -213,6 +271,7 @@ public class MenuPages{
 		}
 
 		//health bar for player#2
+		len = player2.health;
 		noStroke();
 		fill(#CCC1AB);
 		rect(width-len-padding,padding,len,20);
@@ -221,9 +280,10 @@ public class MenuPages{
 		text("player2", width-padding-70, 55);
 
 		if(health2>=0){
-		noStroke();
-		fill(#11689E);
-		rect(width-len-padding+3,padding+3,health2 -6,20-6);}
+			noStroke();
+			fill(#11689E);
+			rect(width-len-padding+3,padding+3,health2 -6,20-6);
+		}
 
 		//score for player#2
 		textSize(12);
@@ -243,10 +303,6 @@ public class MenuPages{
 			fill(#C81313);
 			text(player2.getWeaponName(), width-padding-65, height- 45);
 		}
-		
-
-
-
 	}
 
 	//page when 1 match is over
