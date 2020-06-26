@@ -1,4 +1,5 @@
 //class for creating a weapon, by using an object of class FCircle.
+//BulletFactory
 public class Weapon{
 	private FCircle bullet;
 	private float x,y;
@@ -37,18 +38,20 @@ public class Weapon{
 		if(name.equals("bouncer")){
 			bullet.setSize(12);
 			// bullet.setStrokeWeight(4);
-			damage=20;
-			bullet.setGroupIndex(-1);
+			damage=10;
+			if((tank.getName()).equals("player1")) {bullet.setGroupIndex(-1);}
+			bullet.setGroupIndex(-2);
 			bullet.setRestitution(1);
-			bullet.setPosition(x+(55*cos(ang_pos)),y+(55*sin(ang_pos)));
+			bullet.setPosition(x+(65*cos(ang_pos)),y+(65*sin(ang_pos)));
 		}
 		else if(name.equals("destroyer")){
-			bullet.setSize(24);
+			bullet.setSize(32);
 			// bullet.setStrokeWeight(4);
 			damage=50;
-			bullet.setGroupIndex(-2);
+			if((tank.getName()).equals("player1")) {bullet.setGroupIndex(-3);}
+			bullet.setGroupIndex(-4);
 			bullet.setRestitution(0);
-			bullet.setFriction(friction*3);
+			bullet.setFriction(friction*4);
 			bullet.setPosition(x+(75*cos(ang_pos)),y+(75*sin(ang_pos)));
 		}
 		// bullet.setPosition(x+(55*cos(ang_pos)),y+(55*sin(ang_pos)));
