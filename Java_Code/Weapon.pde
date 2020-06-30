@@ -37,7 +37,6 @@ public class Weapon{
 
 		if(name.equals("bouncer")){
 			bullet.setSize(12);
-			// bullet.setStrokeWeight(4);
 			damage=10;
 			if((tank.getName()).equals("player1")) {bullet.setGroupIndex(-1);}
 			bullet.setGroupIndex(-2);
@@ -46,7 +45,6 @@ public class Weapon{
 		}
 		else if(name.equals("destroyer")){
 			bullet.setSize(32);
-			// bullet.setStrokeWeight(4);
 			damage=50;
 			if((tank.getName()).equals("player1")) {bullet.setGroupIndex(-3);}
 			bullet.setGroupIndex(-4);
@@ -54,7 +52,6 @@ public class Weapon{
 			bullet.setFriction(friction*4);
 			bullet.setPosition(x+(75*cos(ang_pos)),y+(75*sin(ang_pos)));
 		}
-		// bullet.setPosition(x+(55*cos(ang_pos)),y+(55*sin(ang_pos)));
 		bullet.setVelocity(speed*cos(ang_pos),speed*sin(ang_pos));
 
 	 	if((tank.getName()).equals("player1")){
@@ -63,16 +60,5 @@ public class Weapon{
 			bullets2.add(bullet);	
 		}world.add(bullet);
 	}
-
-	// public float getDamage(){return damage;}
-
-	// public void destroyed(){
-	// 	world.remove(bullet);
-	// }
-	
-	// public float getAbsVelocity(){
-	// 	return (float)Math.sqrt((bullet.getVelocityX()*bullet.getVelocityX())+(bullet.getVelocityY()*bullet.getVelocityY()));
-	// }
-
 }
 
