@@ -27,6 +27,7 @@ The two players, red and blue tanks respectively, need to battle against each ot
 Players can play the game in Java Desktop app., while they can use JavaScript Web client to create a new maps or select the tanks to play with. 
 
 Some objectives and features of the game:
+
 - 2 Players play and compete with each other.
 - Player need to destroy opposite player's tank 5 times to win the game.
 - Each player has select among 3 types of different tanks in JS web client app. Each tank has different characteristics (total health amount, speed, etc).
@@ -48,17 +49,20 @@ There are 5 .pde files for each class in the JavaCode directory:
 - [Weapon](Java_Code/Weapon.pde) class handles creation of weapon (i.e. bullets) each time a player fires by creating and setting an object of class [FCircle](http://www.ricardmarxer.com/fisica/reference/fisica/FCircle.html)
 - [ExplosionAnimation](Java_Code/ExplosionAnimation.pde) class handles drawing the animation of explosion when bullet hits the tank or bricks.
 
-The JavaScript Client app. uses are 3 html pages for map creation, tank selection, and waiting for game command.
+The JavaScript Client app. uses are 3 html pages for map creation, tank selection, and waiting for game command:
+
 - [StartingPage](https://mukanov8.bitbucket.io/index.html)
 - [MapCreationPage](https://mukanov8.bitbucket.io/map.html)
 - [TanksSelectionPage](https://mukanov8.bitbucket.io/tanks.html)
 
 Java:
+
 - Developed in [Processing](https://processing.org/).
 - The game is heavily based on usage of [Fisica](http://www.ricardmarxer.com/fisica/) library, as most of the objects created are instances of fisica's FBody class. The physics of the game (and collision detection) is also attributed to functionalities of this library.
 - The Processing Sound library was used to be able to play different game sounds (shooting sound, explosion, collision, button click).
 
 JavaScript:
+
 - Developed in [p5.js](https://p5js.org/)
 - Used built-in functionalities of p5.js.
 
@@ -81,6 +85,7 @@ Play the game until someone loses 5 times.
 
 ### Dependencies
 Libraries used:
+
 - [Processing](https://processing.org/).
 - [p5.js](https://p5js.org/).
 - [Fisica](http://www.ricardmarxer.com/fisica/) library for Processing.
