@@ -189,24 +189,4 @@ public class Player {
 		// println(xloc+" : " +yloc);
 		return new PVector(xloc,yloc);
 	}
-
-
-
-	// void update(Player player){
-	// 	if (player_name.equals("player1")) {health1-=(player.getWeapon()).getDamage();println(health1+" ::");}
-	// 	if (player_name.equals("player2")) {health2-=(player.getWeapon()).getDamage();println(health2+" ::");}
-	// }
-
-	// void chooseWeapon(String weapon_name){
-	// 	this.weapon_name = weapon_name;
-	// 	// if(weapon.equals("bouncer")) this.weapon=new Weapon(tank,weapon);
-	// 	// else if(weapon.equals("destroyer")) this.weapon=new Weapon(tank,weapon);
-	// }
-
-	// Weapon getWeapon(){ return weapon;}
-
-	
-
-	// FBox getTank(){return tank;}
-
 }
