@@ -98,10 +98,7 @@ function setup() {
     btnSave.style('border-radius', '6px');
     btnSave.hide();
     btnSave.mousePressed(savePressed);
-
-
 }
-
 
 function draw(){
     textFont('Georgia');
@@ -227,18 +224,12 @@ function nextPressed(){
     turn();
     btnNext.hide();
     btnSave.show();
-    console.log(tanks);
 }
 
 function savePressed(){
-    // player1=false;
     if(checkbox1.checked()){ tanks.tanks.push(1);}
     else if(checkbox2.checked()){ tanks.tanks.push(2);}
     else if(checkbox3.checked()){ tanks.tanks.push(3);}
-    // turn();
-    // btnNext.hide();
-    // btnSave.show();
-    console.log(tanks);
     alert("Tanks were selected." + "\n" + "Go to your Java app to start playing");
     ws.send(JSON.stringify(tanks));
     window.location.href = "index.html";
