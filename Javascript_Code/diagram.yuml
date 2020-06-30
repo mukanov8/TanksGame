@@ -1,10 +1,20 @@
 // {type:class}
 // {direction:topDown}
 // {generate:true}
-[startingPage]->[tanksPage]
-[startingPage]->[mapPage]
 
-[mapPage]->[startingPage]
-[tanksPage]->[startingPage]
+// [startingPage]->[tanksPage]
+// [startingPage]->[mapPage]
+
+// [mapPage]->[startingPage]
+// [tanksPage]->[startingPage]
+
+[Java_Code] -> [Player (TankFactory)]
+[Java_Code] -> [ExplosionAnimation]
+[Java_Code] -> [MenuPages]
+[Player (TankFactory)] ++- [Weapon (BulletFactory)]
+[Weapon (BulletFactory)]+-[Fisica FCircle]
+[Fisica FCircle]^[Fisica FBody]
+[Fisica FBox]^[Fisica FBody]
+[Player (TankFactory)] +- [Fisica FBox]
 
 
