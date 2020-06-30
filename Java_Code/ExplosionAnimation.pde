@@ -1,6 +1,5 @@
 //class for displaying an explosion.
 
-
 public class ExplosionAnimation{
   
   private float x,y, size, scalingFactor, scaling;
@@ -10,7 +9,6 @@ public class ExplosionAnimation{
   private boolean increase, implode;
 
   public ExplosionAnimation(FCircle bullet,  float startTime){
-      // time= millis();
       x = bullet.getX();
       y = bullet.getY();
       hue = bullet.getFillColor();
@@ -21,9 +19,7 @@ public class ExplosionAnimation{
       increase = true;
       this.startTime = startTime;
       implode = true;
-      hueInc = 0;
-      // start();
-     
+      hueInc = 0;     
   }
 
   private void draw(){
