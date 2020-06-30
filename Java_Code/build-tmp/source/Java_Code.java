@@ -137,7 +137,7 @@ public void setup()
   	player1_color = color(184,44,34);
   	player2_color = color(44,104,154);
   	player1_tank_type =1;
-  	player2_tank_type =3;
+  	player2_tank_type =1;
 
   	mapShot1 = loadImage("data/Map1.png");
 	mapShot2 = loadImage("data/Map2.png");
