@@ -1,6 +1,5 @@
 //class for displaying all pages (containing buttons and text) on the screen.
 public class MenuPages{
-	
 
 	//is used in the beginning, i.e. starting page
 	void start(){
@@ -34,7 +33,6 @@ public class MenuPages{
 			text("Play Game", 198, 185);
 		}
 	}
-
 	// void intro(){
 	// 	println("introoo");
 	// 	translate(centerX, centerY);//Shift things to center
@@ -61,23 +59,6 @@ public class MenuPages{
 		text("Map#1", -75, 100);
 		if ((mouseX > centerX-125 && mouseX < 75 + centerX) && (mouseY > centerY && mouseY < 200 + centerY)){
 			imageMode(CORNER); image(mapShot1, -125, 0, 200, 200); 
-			// fill(#FFF1D6);
-			// rect(-125,0, 200, 200,16);
-			// fill(#FF292A);
-			// text("Map#1", -75, 100);
-			// textSize(15);
-			// fill(#CCC1AB);
-			// text("map#1", -55, 180);
-
-			// if(map1.size()>0){
-			// 	textSize(15);
-			// 	fill(#CCC1AB);
-			// 	text("map#1", -55, 180);
-			// }else{
-			// 	textSize(15);
-			// 	fill(#CCC1AB);
-			// 	text("no data", -55, 180);
-			// }
 		}
 
 		noStroke();
@@ -88,24 +69,6 @@ public class MenuPages{
 		text("Map#2", 225, 100);
 		if ((mouseX > centerX+175 && mouseX < 375 + centerX) && (mouseY > centerY && mouseY < 200 + centerY)){
 			imageMode(CORNER); image(mapShot2, 175, 0, 200, 200); 
-
-			// 	fill(#FFF1D6);
-			// 	rect(175, 0, 200, 200,16);
-			// fill(#FF292A);
-			// text("Map#2", 225, 100);
-			// textSize(15);
-			// fill(#CCC1AB);
-			// text("map#2", 250, 180);
-
-			// if(map2.size()>0){
-			// 	textSize(15);
-			// 	fill(#CCC1AB);
-			// 	text("map#2", 225, 180);
-			// }else{
-			// 	textSize(15);
-			// 	fill(#CCC1AB);
-			// 	text("no data", 245, 180);
-			// }
 		}
 
 		noStroke();
@@ -123,16 +86,7 @@ public class MenuPages{
 			textSize(15);
 			fill(#CCC1AB);
 			text("last saved map", 525, 180);
-			// if(map3.size()>0){
-			// 	textSize(15);
-			// 	fill(#CCC1AB);
-			// 	text("last saved map", 525, 180);
-			// }
-			//else{
-			// 	textSize(15);
-			// 	fill(#CCC1AB);
-			// 	text("no data", 545, 180);
-			// }
+
 		}
 
 		noStroke();
@@ -161,7 +115,7 @@ public class MenuPages{
 			text("choose tanks", 176, 400);
 		}
 	}
-
+	//interface that shows while map is being edited in Web client
 	void loadingMap(){
 		translate(centerX, centerY);//Shift things to center
 		fill(#C81313);
@@ -172,35 +126,7 @@ public class MenuPages{
 		text("loading the map...", 90, 0);
 	}
 
-	//page where you create your own map, which is then saved
-	//under the slot of 'map3'
-	// void mapcustom(){
-	// 	// translate(centerX, centerY);//Shift things to center
-	// 	fill(#C81313);
-	// 	textSize(20);
-	// 	text("Click to add brick", centerX+183, 300);
-
-	// 	fill(#C81313);
-	// 	textSize(18);
-	// 	text("Right-click to remove brick", centerX+143, 540);
-	// 	fill(#C81313);
-	// 	textSize(18);
-	// 	text("Drag to move brick", centerX+173, 580);
-
-	// 	noStroke();
-	// 	fill(#CCC1AB);
-	// 	rect(550, 400, 50, 30,4);
-	// 	textSize(18);
-	// 	fill(#C81313);
-	// 	text("done", 553, 420);
-	// 	if ((mouseX > 550 && mouseX < 600) && (mouseY > 400 && mouseY < 430)){
-	// 		fill(#FFF1D6);
-	// 		rect(550, 400, 50, 30,4);
-	// 		fill(#FF292A);
-	// 		text("done", 553, 420);
-	// 	}
-	// }
-
+	//interface that shows while tanks are selected in Web client
 	void loadingTanks(){
 		translate(centerX, centerY);//Shift things to center
 		fill(#C81313);
@@ -210,7 +136,6 @@ public class MenuPages{
 		textSize(40);
 		text("loading the tanks...", 90, 0);
 	}
-
 
 	// page where you add a tank/player on screen. Only 2 tanks.
 	void tankput(){
