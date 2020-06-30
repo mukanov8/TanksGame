@@ -47,8 +47,7 @@ let divs= {
 	 redTankLabel:0,
 	 redTank:0
 };
-// the gui object
-// let gui;
+
 let cnv;
 let mapCnt;
 let retJson;
@@ -295,8 +294,6 @@ function keyPressed() {
 	else if(key==2 && editmode){divs.typeSelect.value('soft brick');}
 	else if(key==3 && editmode){divs.typeSelect.value('moveable brick');}
 }
-
-
 
 // called when loading the page
 $(function () {
