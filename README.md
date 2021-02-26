@@ -2,13 +2,6 @@
 ## The Tanks Game
 ![Main menu](Screenshots/Title.png)
 
-### Personal Information
-
-* Name: Ayan Mukanov
-* Student id: 20170881
-* Email: mukanov.ayan@kaist.ac.kr
-
-
 ### Table of content
 * [JavaCode](Java_Code)
 * [JavaScriptCode](Javascript_Code)
